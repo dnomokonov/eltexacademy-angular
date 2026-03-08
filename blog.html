@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Статьи</title>
 </head>
 <body>
@@ -118,12 +119,14 @@
   <section>
     <h2>Создать статью</h2>
     <form action="">
-      <label>
-        <input type="text" placeholder="Заголовок">
-      </label>
-      <label>
-        <textarea placeholder="Текст статьи"></textarea>
-      </label>
+      <div>
+        <label for="title">Заголовок</label>
+        <input id="title" type="text" placeholder="Заголовок">
+      </div>
+      <div>
+        <label for="textArticle">Текст статьи</label>
+        <textarea id="textArticle" placeholder="Текст статьи"></textarea>
+      </div>
       <input type="submit" value="Добавить">
     </form>
   </section>
@@ -131,8 +134,10 @@
 
 <footer>
   <h2>Контакты</h2>
-  <p>Email: <a href="mailto:alex@creativeblog.ru">alex@creativeblog.ru</a><br>
-    Телефон: +7 (999) 123-45-67</p>
+  <address>
+    Email: <a href="mailto:alex@creativeblog.ru">alex@creativeblog.ru</a><br>
+    Телефон: <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+  </address>
 
   <h3>Социальные сети:</h3>
   <div class="social-links">
