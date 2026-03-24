@@ -1,0 +1,38 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-group label {
+    color: var(--color-default);
+}
+
+.input-group input,
+.input-group textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--fs-body);
+    padding: 19px 0 19px 20px;
+    border: 1px solid #DDE0E7;
+    border-radius: 5px;
+    color: #A3A6AD;
+    background: transparent;
+}
+
+.input-group textarea.message {
+    height: 123px;
+}
