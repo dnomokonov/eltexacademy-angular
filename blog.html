@@ -20,7 +20,6 @@
     </nav>
   </header>
 
-
   <main>
     <section class="blog-hero container">
       <div class="blog-hero-content">
@@ -123,8 +122,40 @@
           Next &rarr;
         </a>
       </div>
-
     </section>
+
+    <section class="add-post-section">
+      <div class="add-post-wrapper container">
+        <h2>Добавить статью</h2>
+        <form id="addPostForm">
+          <div class="form-item">
+            <div class="input-group">
+              <label for="titleBlock" class="label-dark">Заголовок</label>
+              <input type="text" id="titleBlock" class="dark" placeholder="Заголовок статьи" required>
+            </div>
+
+            <div class="input-group">
+              <label for="textPost" class="label-dark">Текст статьи</label>
+              <textarea id="textPost" class="dark" placeholder="Текст статьи" required></textarea>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <input type="submit" value="Добавить" class="btn btn-submit">
+            <input type="reset" value="Отмена" class="btn btn-outline">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="tooltip-control">
+      <button id="addPostBtn" title="Add post">
+        <img src="assets/icons/add_post.svg" alt="add post">
+      </button>
+      <button id="showStatBtn" title="Show statistics">
+        <img src="assets/icons/view_stats.svg" alt="view stats">
+      </button>
+    </div>
   </main>
 
   <footer>
@@ -153,11 +184,11 @@
           <div class="form-item">
             <div class="input-group">
               <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Your email address" autocomplete="off">
+              <input type="email" id="email" class="light" placeholder="Your email address" autocomplete="off" required>
             </div>
             <div class="input-group">
               <label for="message">Input your message</label>
-              <textarea id="message" class="message" placeholder="Describe your project"></textarea>
+              <textarea id="message" class="light" placeholder="Describe your project" required></textarea>
             </div>
           </div>
           <input type="submit" value="Submit" class="btn btn-submit">
@@ -169,5 +200,37 @@
       <p class="copyright">&copy; 2026 Brand, Inc</p>
     </div>
   </footer>
+
+  <dialog closedby="any" id="statsDialog" class="dialog">
+    <div class="dialog-content">
+      <h3>Статистика страницы</h3>
+      <div class="option-stats">
+        <div class="option-block">
+          <p>Всего статей:</p>
+          <span class="dialog-count" id="countPost">0</span>
+        </div>
+        <div class="option-block">
+          <p>Комментарии:</p>
+          <span class="dialog-count" id="countComments">0</span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <template id="post-template">
+    <article class="post-card">
+      <div class="post-card__image">
+        <div class="img-placeholder">
+          <img src="" alt="preview">
+        </div>
+      </div>
+      <div class="post-card__body">
+        <p class="title"></p>
+        <time datetime="" class="date"></time>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="js/blog.js" defer></script>
 </body>
 </html>

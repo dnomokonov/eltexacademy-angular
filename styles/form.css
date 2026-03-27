@@ -22,17 +22,37 @@ form {
     color: var(--color-default);
 }
 
+.input-group .label-dark {
+    padding-left: 8px;
+    color: var(--color-dark);
+}
+
 .input-group input,
 .input-group textarea {
     font-family: 'Inter', sans-serif;
     font-size: var(--fs-body);
     padding: 19px 0 19px 20px;
-    border: 1px solid #DDE0E7;
     border-radius: 5px;
-    color: #A3A6AD;
     background: transparent;
 }
 
-.input-group textarea.message {
+.input-group textarea {
     height: 123px;
+}
+
+input.light,
+textarea.light {
+    color: #A3A6AD;
+    border: 1px solid var(--color-light-border);
+}
+
+input.dark,
+textarea.dark {
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark-border);
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
 }

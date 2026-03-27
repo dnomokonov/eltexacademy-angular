@@ -119,15 +119,33 @@
     margin: 20px 0 10px;
 }
 
-.btn-outline {
-    align-items: center;
+.pagination .btn-outline {
     padding: 12px 54px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
 }
 
-.btn-outline:hover {
-    background: var(--color-accent-green);
-    color: #fff;
+.add-post-section {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
 }
 
+.add-post-section.open {
+    grid-template-rows: 1fr;
+}
+
+.add-post-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    overflow: hidden;
+}
+
+.add-post-wrapper h2 {
+    margin: 0;
+}
+
+#addPostForm .btn {
+    font-size: var(--fs-body);
+    min-width: 200px;
+    padding: 14px 36px;
+}

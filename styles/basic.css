@@ -13,6 +13,9 @@
 
     --color-primary-footer: #1E2128;
 
+    --color-dark-border: #323743;
+    --color-light-border: #DDE0E7;
+
     --bg-blog: #FAFAFA;
 }
 
@@ -35,12 +38,16 @@ main {
 .btn {
     border: none;
     border-radius: 5px;
+    align-items: center;
+    background: none;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .btn-outline {
     border: 1px solid var(--color-accent-green);
     color: var(--color-accent-green);
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
@@ -54,7 +61,6 @@ main {
     font-size: var(--fs-body);
     color: var(--color-default);
     background-color: var(--color-accent-green);
-    cursor: pointer;
 }
 
 .btn-submit:hover {

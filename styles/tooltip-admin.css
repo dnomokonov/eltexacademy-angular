@@ -1,0 +1,39 @@
+.tooltip-control {
+    position: fixed;
+    right: 0;
+    bottom: 4rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 24px 12px;
+    gap: 20px;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-default);
+}
+
+.tooltip-control button {
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.tooltip-control button:hover {
+    transform: translateY(-2px);
+}
+
+.tooltip-control button:active {
+    transform: scale(0.92);
+}
+
+.tooltip-control img {
+    display: block;
+    width: 24px;
+}

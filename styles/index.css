@@ -2,6 +2,8 @@
 @import url('./basic.css');
 @import url('./typography.css');
 @import url('./form.css');
+@import url('./tooltip-admin.css');
+@import url('./dialog.css');
 
 @import url('./home.css');
 @import url('./blog.css');

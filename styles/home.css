@@ -207,7 +207,7 @@
 
 .hobby-grid {
     display: grid;
-    grid-template-columns: 268px 268px 1fr;
+    grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: 266px 266px;
     column-gap: 34px;
     row-gap: 32px;
