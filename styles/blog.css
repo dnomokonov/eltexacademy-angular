@@ -78,6 +78,7 @@
 }
 
 .post-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -111,6 +112,11 @@
     color: var(--color-dark);
     line-height: 1.35;
     margin-bottom: 0;
+}
+
+.post-card:hover .btn-delete-post {
+    opacity: 1;
+    visibility: visible;
 }
 
 .pagination {
@@ -148,4 +154,56 @@
     font-size: var(--fs-body);
     min-width: 200px;
     padding: 14px 36px;
+}
+
+.btn-delete-post {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+
+    border-radius: 50%;
+    border: none;
+
+    font-size: 0;
+    cursor: pointer;
+
+    color: var(--color-default);
+    background-color: var(--color-gray-light);
+
+    opacity: 0;
+    visibility: hidden;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.2s ease,
+            background-color 0.2s ease;
+}
+
+.btn-delete-post:hover {
+    background-color: var(--color-crucially);
+    transform: scale(1.1);
+}
+
+.btn-delete-post::before,
+.btn-delete-post::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: var(--color-default);
+    border-radius: 1px;
+}
+
+.btn-delete-post::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btn-delete-post::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
