@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/index.css">
   <title>Блог</title>
-  <script src="js/blog.js"></script>
 </head>
 <body>
   <header class="header container">
@@ -39,8 +38,8 @@
 
       <div class="posts-grid"></div>
 
-      <div class="pagination">
-        <a href="#" class="btn btn-outline">
+      <div class="pagination" id="pagination" style="display: none">
+        <a href="#" class="btn btn-outline" id="morePostButton">
           Next &rarr;
         </a>
       </div>
@@ -147,11 +146,12 @@
         </div>
       </div>
       <div class="post-card__body">
-        <p class="title"></p>
+        <h2 class="title"></h2>
+        <p class="desc"></p>
         <time datetime="" class="date"></time>
       </div>
+      <button class="btn btn-delete-post">Удалить</button>
     </article>
-    <button class="btn btn-delete-post">Удалить</button>
   </template>
 
   <script type="module" src="js/blog.js" defer></script>
