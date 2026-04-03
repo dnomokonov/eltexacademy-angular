@@ -167,6 +167,51 @@
     padding: 14px 36px;
 }
 
+#addPostBtn:disabled,
+#showStatBtn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+#addPostForm input:disabled,
+#addPostForm textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#addPostForm input[type="submit"]:disabled,
+#addPostForm input[type="reset"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#addPostForm input[type="submit"].btn-submitting {
+    opacity: 1;
+    cursor: wait;
+    background-color: var(--color-gray-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+#addPostForm input[type="submit"].btn-submitting::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.18) 50%,
+            transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: btn-shimmer 1s linear infinite;
+}
+
+@keyframes btn-shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+}
+
 .btn-delete-post {
     position: absolute;
     width: 32px;
