@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/index.css">
   <title>Блог</title>
+  <script src="js/blog.js"></script>
 </head>
 <body>
   <header class="header container">
@@ -20,7 +21,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <section class="blog-hero container">
       <div class="blog-hero-content">
         <h1>My blogs</h1>
@@ -32,96 +33,11 @@
     </section>
 
     <section class="blog-content container">
-      <article class="featured-post">
-        <div class="img-placeholder">
-          <img src="assets/photos/stock1.jpg" alt="preview">
-        </div>
-        <div class="featured-post__body">
-          <h2>Minim anim pariatur magna duis sit et dolor inci</h2>
-          <p>Sint occaecat deserunt aliquip do occaecat ut quis. Cupidatat magna fugiat quis sit duis est in volup</p>
-          <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-        </div>
-      </article>
-
-      <div class="posts-grid">
-        <article class="post-card">
-          <div class="post-card__image">
-            <div class="img-placeholder">
-              <img src="assets/photos/stock3.jpg" alt="preview">
-            </div>
-          </div>
-          <div class="post-card__body">
-            <p class="title">Minim anim pariatur magna duis sit et dolor incididunt</p>
-            <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-          </div>
-          <button class="btn btn-delete-post">Удалить</button>
-        </article>
-
-        <article class="post-card">
-          <div class="post-card__image">
-            <div class="img-placeholder">
-              <img src="assets/photos/stock5.jpg" alt="preview">
-            </div>
-          </div>
-          <div class="post-card__body">
-            <p class="title">Minim anim pariatur magna duis sit et dolor incididunt</p>
-            <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-          </div>
-          <button class="btn btn-delete-post">Удалить</button>
-        </article>
-
-        <article class="post-card">
-          <div class="post-card__image">
-            <div class="img-placeholder">
-              <img src="assets/photos/stock6.jpg" alt="preview">
-            </div>
-          </div>
-          <div class="post-card__body">
-            <p class="title">Minim anim pariatur magna duis sit et dolor incididunt</p>
-            <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-          </div>
-          <button class="btn btn-delete-post">Удалить</button>
-        </article>
-
-        <article class="post-card">
-          <div class="post-card__image">
-            <div class="img-placeholder">
-              <img src="assets/photos/stock3.jpg" alt="preview">
-            </div>
-          </div>
-          <div class="post-card__body">
-            <p class="title">Minim anim pariatur magna duis sit et dolor incididunt</p>
-            <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-          </div>
-          <button class="btn btn-delete-post">Удалить</button>
-        </article>
-
-        <article class="post-card">
-          <div class="post-card__image">
-            <div class="img-placeholder">
-              <img src="assets/photos/stock5.jpg" alt="preview">
-            </div>
-          </div>
-          <div class="post-card__body">
-            <p class="title">Minim anim pariatur magna duis sit et dolor incididunt</p>
-            <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-          </div>
-          <button class="btn btn-delete-post">Удалить</button>
-        </article>
-
-        <article class="post-card">
-          <div class="post-card__image">
-            <div class="img-placeholder">
-              <img src="assets/photos/stock6.jpg" alt="preview">
-            </div>
-          </div>
-          <div class="post-card__body">
-            <p class="title">Minim anim pariatur magna duis sit et dolor incididunt</p>
-            <time datetime="2025-10-16" class="date">Oct 16, 2025</time>
-          </div>
-          <button class="btn btn-delete-post">Удалить</button>
-        </article>
+      <div class="empty-state">
+        <p>No articles</p>
       </div>
+
+      <div class="posts-grid"></div>
 
       <div class="pagination">
         <a href="#" class="btn btn-outline">
