@@ -70,3 +70,14 @@ showStatBtn.addEventListener('click', () => {
   updateStats();
   dialogStats.showModal();
 })
+
+postsGrid.addEventListener('click', (evt) => {
+  const deletePostBtn = evt.target.closest('.btn-delete-post');
+
+  if (deletePostBtn) {
+    const postCard = deletePostBtn.closest('.post-card');
+    postCard.remove();
+  }
+})
+
+
