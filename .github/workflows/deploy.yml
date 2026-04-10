@@ -1,0 +1,81 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: blog-app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./blog-app
+        run: npm ci
+
+      - name: Build Angular app
+        working-directory: ./blog-app
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p _site
+          # Copy static site files (excluding blog-app folder)
+          rsync -av --exclude='blog-app' --exclude='_site' --exclude='.git' --exclude='.github' --exclude='node_modules' ./ _site/
+          # Copy built Angular app to blog-app subdirectory
+          mkdir -p _site/blog-app
+          cp -r blog-app/dist/blog-app/browser/* _site/blog-app/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  report-status:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Report build status
+        run: |
+          if [ "${{ needs.build.result }}" == "success" ] && [ "${{ needs.deploy.result }}" == "success" ]; then
+            echo "Build and deployment successful"
+          else
+            echo "Build or deployment failed"
+            exit 1
+          fi
