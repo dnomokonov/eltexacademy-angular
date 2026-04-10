@@ -1,0 +1,32 @@
+.posts-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 80px 24px;
+    width: 100%;
+}
+
+.posts-loader__dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-accent-green);
+    animation: loader-bounce 1.2s ease-in-out infinite;
+}
+
+.posts-loader__dot:nth-child(1) { animation-delay: 0s; }
+.posts-loader__dot:nth-child(2) { animation-delay: 0.2s; }
+.posts-loader__dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loader-bounce {
+    0%, 80%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    40% {
+        transform: translateY(-14px);
+        opacity: 1;
+    }
+}
