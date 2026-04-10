@@ -30,58 +30,66 @@
     display: flex;
     flex-direction: column;
     margin-top: 74px;
-    gap: 62px;
 }
 
-.featured-post {
-    display: grid;
-    grid-template-columns: 770px 1fr;
-    align-items: flex-start;
-    border-radius: 8px;
-    background-color: var(--bg-blog);
-}
-
-.featured-post .img-placeholder {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    background-color: #E8E8EC;
-    overflow: hidden;
-    border-radius: 8px 0 0 8px;
-}
-
-.featured-post .img-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.featured-post__body {
-    padding: 22px 30px 22px 46px;
-}
-
-.featured-post__body h2 {
-    font-size: var(--fs-h2);
-    font-weight: var(--fw-bold);
-    color: var(--color-dark);
-    line-height: 1.25;
-    margin-bottom: 16px;
-}
-
-.featured-post__body p {
-    margin-bottom: 14px;
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    gap: 16px;
+    color: var(--color-gray-dark);
 }
 
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    row-gap: 62px;
+    column-gap: 34px;
+}
+
+.posts-grid .post-card:first-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 770px 1fr;
+    border-radius: 8px;
+    background-color: var(--bg-blog);
+}
+
+.posts-grid .post-card:first-child .post-card__image {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.posts-grid .post-card:first-child .post-card__image .img-placeholder {
+    aspect-ratio: 16 / 10;
+    border-radius: 8px 0 0 8px;
+}
+
+.posts-grid .post-card:first-child .post-card__body {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 22px 30px 22px 46px;
+    gap: 16px;
+}
+
+.posts-grid .post-card:first-child .post-card__body .title {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    line-height: 1.25;
+}
+
+.posts-grid .post-card:first-child .post-card__body .desc {
+    display: block;
 }
 
 .post-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 8px;
 }
 
 .post-card__image .img-placeholder {
@@ -114,13 +122,16 @@
     margin-bottom: 0;
 }
 
+.post-card__body .desc {
+    display: none;
+}
+
 .post-card:hover .btn-delete-post {
     opacity: 1;
     visibility: visible;
 }
 
 .pagination {
-    display: flex;
     justify-content: center;
     margin: 20px 0 10px;
 }
